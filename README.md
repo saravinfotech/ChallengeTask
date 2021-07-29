@@ -8,3 +8,6 @@ CountryViewModel.kt-->
     
     
 CountryDetail --> 🤦🤦‍♂️ added the @SerializedName annotation for the JSON keys
+
+
+As of now havent integrated the logic to fetch specific country name and country capital. Working on the same, will refactor the class names and variables 
