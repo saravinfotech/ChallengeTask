@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         countryName = findViewById(R.id.countryName)
         viewModel.getCountryName("DEN")
         viewModel.countryDetailsLiveData.observe(this, {
-            countryName.text = it.toString()
+            countryName.text = it
         })
     }
 

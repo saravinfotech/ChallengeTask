@@ -2,7 +2,7 @@ package com.themobilecoder.datamodel
 
 import com.google.gson.annotations.SerializedName
 
-data class CountryDetail(
+data class Capitals(
     @SerializedName("country_name")
     val countryName:String,
     @SerializedName("capital")
