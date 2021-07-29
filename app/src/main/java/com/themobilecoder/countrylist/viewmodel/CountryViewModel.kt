@@ -1,5 +1,6 @@
 package com.themobilecoder.countrylist.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,28 +12,28 @@ import kotlinx.coroutines.*
 
 class CountryViewModel : ViewModel() {
     val countryDetailsLiveData = MutableLiveData<String>()
-//    val countryNameLiveData = MutableLiveData<String>()
     private val slowNetwork = SlowNetwork()
 
 
-    fun getCountryName(countryCode: String) {
+    fun getCountryName(countryName: String) {
         viewModelScope.launch {
-            getDetailsFromFile(countryCode)
+            getDetailsFromFile(countryName)
         }
     }
 
-    private suspend fun getDetailsFromFile(countryCode: String) {
+    private suspend fun getDetailsFromFile(countryName: String) {
         withContext(Dispatchers.IO) {
             //Converting the COUNTRIES JSON to Countries data class
             val countriesList = getCountryNameAndCode()
-             //Filtering/Extracting the required country from the Countries List using Country Code
-           var countryDetail =  countriesList.filter { countryName ->
-               countryName.countryCode == countryCode
-           }
+            //Filtering/Extracting the required country from the Countries List using Country Code
+            var countryDetail =  countriesList.filter {
+                it.countryName == countryName
+            }
             //Fetching the required Country name from the filtered list
-            var countryName = countryDetail[0].countryName
+            var countryCode = countryDetail[0].countryCode
 
-            countryDetailsLiveData.postValue(countryName)
+            val countryCapital = getCountryCapitalFromFile(countryCode)
+            countryDetailsLiveData.postValue(countryCapital)
         }
     }
 
@@ -40,4 +41,11 @@ class CountryViewModel : ViewModel() {
         Gson().fromJson(slowNetwork.getCountries(), Array<Countries>::class.java)
             .toList() as ArrayList<Countries>
 
+    private fun getCountryCapitalFromFile(countryCode: String): String {
+        //getting the Capital from the SlowNetwork class
+        var countryNameAndCapital = slowNetwork.getCapitolFor(countryCode)
+        //Parse the single JSON item
+        val countryCapitals = Gson().fromJson(countryNameAndCapital, Capitals::class.java)
+        return countryCapitals.capital
+    }
 }

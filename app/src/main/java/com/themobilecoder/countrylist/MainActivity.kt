@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(CountryViewModel::class.java)
 
         countryName = findViewById(R.id.countryName)
-        viewModel.getCountryName("DEN")
+        viewModel.getCountryName("Denmark")
         viewModel.countryDetailsLiveData.observe(this, {
             countryName.text = it
         })
