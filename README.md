@@ -15,4 +15,14 @@ As of now havent integrated the logic to fetch specific country name and country
 
 Updated the code in ViewModel to use Kotlin filter function to fetch the specific country name based on Country Code. As of now the country code is hardcoded to DEN
 
-Updated the code to fetch the country capital. Still the country name is hardcoded. 
+Updated the code to fetch the country capital. Still the country name is hardcoded.
+
+
+
+Enhancements that can be done
+
+Progress bar untill the text is loaded
+Disable Button if nothing entered
+Disable the button once the user clicks the button or click enter button
+Enter action to be handled. 
+Allow edit text to accept only alphabets

@@ -25,9 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         countryName = binding.countryName
         submit = binding.submitButton
-        //TODO Disable Button if nothing entered
-        //TODO disable the button once the user clicks the button or click enter button
-        //TODO enter action to be handled.
+
         submit.setOnClickListener {
             viewModel.getCountryName(countryName.text.toString())
         }
