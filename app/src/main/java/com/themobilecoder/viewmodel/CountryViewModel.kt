@@ -1,6 +1,5 @@
-package com.themobilecoder.countrylist.viewmodel
+package com.themobilecoder.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +12,6 @@ import kotlinx.coroutines.*
 class CountryViewModel : ViewModel() {
     val countryDetailsLiveData = MutableLiveData<String>()
     private val slowNetwork = SlowNetwork()
-
 
     fun getCountryName(countryName: String) {
         viewModelScope.launch {

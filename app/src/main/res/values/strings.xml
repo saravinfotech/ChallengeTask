@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CountryList</string>
+    <string name="submitButton">Submit</string>
+    <string name="editTextHint">Afghanistan</string>
 </resources>
