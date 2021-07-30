@@ -3,6 +3,7 @@ package com.themobilecoder.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.Const.Companion.UNKNOWN_COUNTRY_CODE
 import com.google.gson.Gson
 import com.themobilecoder.datamodel.Capitals
 import com.themobilecoder.datamodel.Countries
@@ -20,7 +21,7 @@ class CountryViewModel : ViewModel() {
     }
 
     private suspend fun getDetailsFromFile(countryName: String) {
-        var countryCapital = "Unknown code"
+        var countryCapital = UNKNOWN_COUNTRY_CODE
         withContext(Dispatchers.IO) {
             //Converting the COUNTRIES JSON to Countries data class
             val countriesList = getCountryNameAndCode()
