@@ -20,17 +20,20 @@ class CountryViewModel : ViewModel() {
     }
 
     private suspend fun getDetailsFromFile(countryName: String) {
+        var countryCapital = "Unknown code"
         withContext(Dispatchers.IO) {
             //Converting the COUNTRIES JSON to Countries data class
             val countriesList = getCountryNameAndCode()
             //Filtering/Extracting the required country from the Countries List using Country Code
-            var countryDetail =  countriesList.filter {
+            var countryDetail = countriesList.filter {
                 it.countryName == countryName
             }
             //Fetching the required Country name from the filtered list
-            var countryCode = countryDetail[0].countryCode
+            var countryCode = countryDetail.getOrNull(0)?.countryCode
 
-            val countryCapital = getCountryCapitalFromFile(countryCode)
+            countryCode?.let {
+                countryCapital = getCountryCapitalFromFile(countryCode)
+            }
             countryDetailsLiveData.postValue(countryCapital)
         }
     }
