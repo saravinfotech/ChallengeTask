@@ -17,7 +17,7 @@ Updated the code in ViewModel to use Kotlin filter function to fetch the specifi
 
 Updated the code to fetch the country capital. Still the country name is hardcoded.
 
-
+Handled the crash occurring due to entry of country name which was not in the list.
 
 Enhancements that can be done
 
