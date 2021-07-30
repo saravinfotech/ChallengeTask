@@ -13,7 +13,7 @@ class CountryViewModel : ViewModel() {
     val countryDetailsLiveData = MutableLiveData<String>()
     private val slowNetwork = SlowNetwork()
 
-    fun getCountryName(countryName: String) {
+    fun getCountryCapital(countryName: String) {
         viewModelScope.launch {
             getDetailsFromFile(countryName)
         }

@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         submit = binding.submitButton
 
         submit.setOnClickListener {
-            viewModel.getCountryName(countryName.text.toString())
+            viewModel.getCountryCapital(countryName.text.toString())
         }
 
         viewModel.countryDetailsLiveData.observe(this, {
