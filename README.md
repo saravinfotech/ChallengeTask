@@ -21,5 +21,4 @@ Enhancements that can be done
 •	Disable the button once the user clicks the button or click enter button
 •	Enter action to be handled. 
 •	Allow edit text to accept only alphabets
-![image](https://user-images.githubusercontent.com/3861942/127873592-3f505047-b33f-4a3d-856d-7488afd7d475.png)
 
