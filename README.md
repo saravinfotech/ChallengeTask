@@ -22,4 +22,4 @@
 
 ### Alternate Option
 - Loopers & message queue's could have been used, but I haven's used loopers post the availability of inbuilt Async Tasks, Coroutines.
-- If my understanding is right loopers and Message queue's would be an ideal choice when more control is required over the thread execution.
+- If my understanding is right loopers and Message queue's would be an ideal choice when more control is required over the thread execution, but not needed for simple tasks.
