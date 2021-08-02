@@ -1,6 +1,6 @@
 
 Updates done 
-•	SlowNetwork.kt --> 
+-	SlowNetwork.kt --> 
 o	Uncommented the codes 40-42 & 49-51 which were commented to disable the main thread execution. 
 o	Now this file is back to the original state preventing these methods to be called from Main thread
 •	CountryViewModel.kt--> 
