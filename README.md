@@ -1,5 +1,5 @@
 
-#Updates done 
+# Updates done 
 -	SlowNetwork.kt --> 
     - Uncommented the codes 40-42 & 49-51 which were commented to disable the main thread execution. 
     - Now this file is back to the original state preventing these methods to be called from Main thread
@@ -13,7 +13,7 @@
 -	Handled the crash occurring due to entry of country name which was not in the list.
 
 
-##Enhancements that can be done
+## Enhancements that can be done
 -	Progress bar until the text is loaded
 -	Disable Button if nothing entered
 -	Disable the button once the user clicks the button or click enter button
